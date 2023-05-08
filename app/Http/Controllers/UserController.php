@@ -7,6 +7,7 @@ use App\Users;
 use App\article;
 use App\information;
 use App\faq;
+use Illumintate\Support\Facades\Cache
 class UserController extends Controller
 {
     public function index(Request $request)
@@ -44,6 +45,28 @@ $listeNumeroPage = range(1, $lastPage);
         return redirect("front");
     }
 
+//     public function fiche()
+//     {
+//        $url = request('id');
+
+//        $tab = array();
+     
+//        $tab = explode("-", $url);
+     
+//        $id = $tab[count($tab)-2];
+//        $fiche = article::find($id);
+//        $premier = substr($fiche->resumer, 0, 1);
+     
+//        $resume_reste = substr($fiche->resumer, 1, strlen($fiche->resumer)-1);     
+   
+//               return view('user/Fiche_art',[
+//           'fiche' => $fiche,
+//         'premier' => $premier,
+//             'resume_reste' => $resume_reste,
+//         ]);
+
+
+//    }
 
 
       public function fiche()
@@ -55,17 +78,14 @@ $listeNumeroPage = range(1, $lastPage);
         $tab = explode("-", $url);
       
         $id = $tab[count($tab)-2];
-        $fiche = article::find($id);
-        $premier = substr($fiche->resumer, 0, 1);
-      
-        $resume_reste = substr($fiche->resumer, 1, strlen($fiche->resumer)-1);     
     
-               return view('user/Fiche_art',[
-           'fiche' => $fiche,
-         'premier' => $premier,
-             'resume_reste' => $resume_reste,
-         ]);
-
+        $fiche = Cache::remember('fiche_'.$id,60,function() use ($id){
+            return article::find($id);
+        });
+        $response = response() -> view('user/Fiche_art',['fiche'=>$fiche]);
+      
+       $response=header('Cache-Control','max-age=3600,public');
+       return $response;
 
     }
 
