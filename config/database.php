@@ -58,7 +58,7 @@ return [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', 'containers-us-west-84.railway.app'),
-            'port' => env('DB_PORT', '5432'),
+            'port' => env('DB_PORT', '5443'),
             'database' => env('DB_DATABASE', 'railway'),
             'username' => env('DB_USERNAME', 'postgres'),
             'password' => env('DB_PASSWORD', '1hgvJAiJhyqzIMJIrvay'),
