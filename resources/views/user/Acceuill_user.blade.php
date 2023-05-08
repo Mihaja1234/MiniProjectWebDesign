@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="description" content="E-Art ETU001670 le site de Hardi qui concerne l IA">
-  <title>E-Art - ETU001670</title>
+  <meta name="description" content="HASINJAKA 1543, l'IA pour Hasinjaka">
+  <title>ETU001543</title>
   <meta content="" name="keywords">
 
   <!-- Favicons -->
@@ -29,7 +29,40 @@
   <link href="assets2/assets/css/main.css" rel="stylesheet">
 
 </head>
+<style>
+    body {
+      background-color: #f00;
+    }
 
+    h1, h2, p {
+      color: black;
+    }
+
+    .card {
+      background-color: white;
+      color: #fff;
+      border: none;
+      margin-top: 10px;
+    }
+
+    .card-body {
+      padding: 1rem;
+     
+    }
+
+    .btn-primary {
+      background-color: #c00;
+      border-color: #c00;
+    }
+
+    .footer-legal {
+      background-color: #c00;
+    }
+
+    .bi {
+      color: #fff;
+    }
+  </style>
 <body>
 
   <!-- ======= Header ======= -->
@@ -39,14 +72,10 @@
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets2/assets/img/logo.png" alt=""> -->
-        <h1>E-Art</h1>
+        <center><h1>HASINJAKA</h1></center>
       </a>
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="{{ url('/faq') }}">FAQ</a></li>
-        </ul>
-      </nav><!-- .navbar -->
+    
 
       <div class="position-relative">
         <a href="#" class="mx-2"><span class="bi-facebook"></span></a>
@@ -59,9 +88,7 @@
         <!-- ======= Search Form ======= -->
         <div class="search-form-wrap js-search-form-wrap">
           <form action="search-result.html" class="search-form">
-            <span class="icon bi-search"></span>
-            <input type="text" placeholder="Search" class="form-control">
-            <button class="btn js-search-close"><span class="bi-x"></span></button>
+            
           </form>
         </div><!-- End Search Form -->
 
@@ -113,7 +140,7 @@
     <section id="posts" class="posts">
       <div class="container" data-aos="fade-up">
        
-        <h1>Liste des articles et les actualites publiees</h1>
+        <h1>Liste des articles </h1>
  
         <form action="{{ url('/searchFront') }}" class="search-form" method="post">
             <span class="icon bi-search"></span>
@@ -123,16 +150,17 @@
 
         <div class="row">
       @foreach($listePub as $rows) <!-- boucle pour afficher 12 cartes -->
-            <div class="col-md-3">
+            <div class="col-md-5">
               <div class="card">
                 <img src="{{ $rows->img }}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h1 class="card-title">{{ $rows->titre }}</h1>
-                  <h2 class="my-3">Auteur : {{ $rows->auteur }}</h2>
+                  <p class="my-3">Auteur : {{ $rows->auteur }}</p>
                   <a href="{{ url('/article') }}/{{Str::slug($rows->titre) }}-{{ $rows->idarticle }}-index.html" class="btn btn-primary">Voir plus</a>
                 </div>
               </div>
             </div>
+            <br>
       @endforeach
         </div>  
 
@@ -140,7 +168,7 @@
     </section> <!-- End Post Grid Section -->
 
     
-  <nav aria-label="Page navigation example">
+  <nav style="margin-left: 150px;" aria-label="Page navigation example">
     <ul class="pagination">
   <li class="page-item {{ $currentPage == 1 ? 'disabled' : '' }}">
   <a class="page-link" href="{{ $currentPage == 1 ? '#' : url('/paginationFront') }}/{{ Str::random(10) }}.{{ $currentPage - 1 }}.paginationFront.html" aria-label="Précédent">
@@ -170,9 +198,7 @@
 
         <div class="row justify-content-between">
           <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-            <div class="copyright">
-              © Copyright <strong><span>ZenBlog</span></strong>. All Rights Reserved
-            </div>
+            
 
             <div class="credits">
               <!-- All the links in the footer should remain intact. -->

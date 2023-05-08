@@ -3,8 +3,8 @@
     <head>
         <title>Connexion administrateur</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <meta name="description" content="E-Art ETU001670 le site de Hardi qui concerne l IA">
-        <title>E-Art - ETU001670</title>
+        <meta name="description" content="HASINJAKA 1543, l'IA pour Hasinjaka">
+        <title>ETU001543</title>
         <link rel="stylesheet" href="<?php echo asset('assets/Login/bootstrap/css/bootstrap.min.css')?>">
         <link rel="stylesheet" href="<?php echo asset('assets/Login/fonts/fontawesome-all.min.css')?>">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -25,7 +25,7 @@
                 <div class="form-group mb-3"><input class="form-control" type="password" id="password" name="mdp" value="tojo" placeholder="Mot de passe"></div>
 
                 <div id="passwordsError" style="display: none;margin-bottom: 16.5px;"><span id="errorMessage" class="text-danger" style="font-size:13px;"></span></div>
-                <div class="form-group mb-3"><button class="btn btn-primary d-block w-100" id="submitButton" type="submit" style="color: rgb(255,255,255);background: var(--bs-gray);font-weight: bold;">SE CONNECTER</button></div>
+                <div class="form-group mb-3"><button class="btn btn-primary d-block w-100" id="submitButton" type="submit" style="color: rgb(255,255,255);background: black;font-weight: bold;">SE CONNECTER</button></div>
                 @IF (isset($erreur))
                 <div class="alert alert-success flash animated" role="alert" style="background: rgb(255,255,255);text-align: center;border-style:none;"><span style="color: var(--bs-red);"><i class="fas fa-exclamation"></i><strong>&nbsp;</strong>{{$erreur}}</span></div>
                 @ENDIF

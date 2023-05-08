@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="description" content="E-Art ETU001670 le site de Hardi qui concerne l IA">
-  <title>E-Art - ETU001670</title>
+  <meta name="description" content="HASINJAKA 1543, l'IA pour Hasinjaka">
+  <title>ETU001543</title>
   <meta content="" name="keywords">
 
   <!-- Favicons -->
@@ -39,7 +39,7 @@
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets2/assets/img/logo.png" alt=""> -->
-        <h1>E-Art</h1>
+        <h1>HASINJAKA</h1>
       </a>
 
       <nav id="navbar" class="navbar">
@@ -90,7 +90,7 @@
                 <textarea type="text" id="article_title" name="question" ></textarea><br><br>
 
              
-                  <div><button class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-gray);border-style: none;">ok</button></div>
+                  <div><button class="btn btn-primary d-block w-100" type="submit" style="background: black;border-style: none;">ok</button></div>
               </form>            
           </div>  
   

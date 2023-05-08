@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="E-Art ETU001670 le site de Hardi qui concerne l IA">
-    <title>E-Art - ETU001670</title>
+    <meta name="description" content="HASINJAKA 1543, l'IA pour Hasinjaka">
+    <title>ETU001543</title>
     <link rel="stylesheet" href="assets/Acc_Admin/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="assets/Acc_Admin/fonts/fontawesome-all.min.css">
@@ -18,52 +18,57 @@
 <body id="page-top">
   <div id="wrapper">
     @include('template.SideBar')
+    <div class="card" style="width:250px;">
+  <div class="card-body">
+    <form action="{{ url('/recherche') }}" method="post">
+      {{ csrf_field() }}
+
+      <div class="mb-3">
+        <div class="row">
+          <div class="col" style="color: rgb(0,0,0);"><label class="col-form-label">Titre:<input name="titre" class="form-control" type="text" style="color: rgb(0,0,0);"></label></div>
+        </div>
+      </div>
+      <p>Choisir entre deux dates</p>
+      <div class="mb-3">
+        <div class="row">
+          <div class="col" style="color: rgb(0,0,0);"><label class="col-form-label"><input name="date1" class="form-control" type="date" style="color: rgb(0,0,0);"></label></div>
+          <div class="col" style="color: rgb(0,0,0);"><label class="col-form-label"><input name="date2" class="form-control" type="date" style="color: rgb(0,0,0);"></label></div>
+        </div>
+      </div>
+
+      <div><button class="btn btn-primary d-block w-100" type="submit" style="background: black;border-style: none;">Rechercher</button></div>
+    </form>
+    <br><br><br><br>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<i class="fas fa-plus"></i> Ajouter Article
+</button>
+  </div>
+  
+</div>
+
     <div class="d-flex flex-column" id="content-wrapper">
       <div id="content">
         @include('template.Header')
+        
         <div class="container-fluid">
-                
-            <form action="{{ url('/recherche') }}" method="post">
-                {{ csrf_field() }}      
-
-
-                <div class="mb-3">
-                    <div class="row">
-                      <div class="col" style="color: rgb(0,0,0);"><label class="col-form-label">Titre:<input name="titre" class="form-control" type="text" style="color: rgb(0,0,0);"></label></div>
-                    </div>
-                  </div>      
-<p>choisir entre deux dates</p>
-                  <div class="mb-3">
-                    <div class="row">
-                      <div class="col" style="color: rgb(0,0,0);"><label class="col-form-label"><input name="date1" class="form-control" type="date" style="color: rgb(0,0,0);"></label></div>
-                      <div class="col" style="color: rgb(0,0,0);"><label class="col-form-label"><input name="date2" class="form-control" type="date" style="color: rgb(0,0,0);"></label></div>         
-                    </div>
-                  </div>         
-                  
            
-                
-                  
-                  <div><button class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-gray);border-style: none;">Rechercher</button></div>
-      </form>
 <div class="card-body">                
         <div class="col-xl-12 mb-3">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-<i class="fas fa-plus"></i> Ajouter une nouvelle Article
-</button>
+       
     
 <div class="row">
   @foreach($liste as $rows) 
-    <div class="col-md-3">
+    <div class="col-md-5">
       <div class="card">
         <img src="{{ $rows->img }}" class="card-img-top" alt="...">
         <div class="card-body">
           <h1 class="card-title">{{ $rows->titre }}</h1>
-          <h2 class="my-3">Auteur : {{ $rows->auteur }}</h2>
-          <h3>publie le {{ $rows->datepublication }}</h3>
-          <h4>publie le {{ $rows->resumer }}</h4>
+          <p class="my-3">Auteur : {{ $rows->auteur }}</p>
+          <p>publie le {{ $rows->datepublication }}</p>
+          <p>publie le {{ $rows->resumer }}</p>
           <p class="card-text">{{ $rows->contenu }}</p>
-          <a class="btn btn-primary" href="{{ url('/Versupdate') }}/{{Str::slug($rows->titre) }}-{{ $rows->idarticle }}-modifier.html" style="background: var(--bs-gray);border-style: none;margin-top: 5px;">Modifier</a>
-          <a class="btn btn-primary" href="{{ url('/delete') }}/{{ Str::random(10) }}.{{ $rows->idarticle }}.67y89.45h" style="background: var(--bs-gray);border-style: none;margin-top: 5px;">Supprimer</a>
+          <a class="btn btn-primary" href="{{ url('/Versupdate') }}/{{Str::slug($rows->titre) }}-{{ $rows->idarticle }}-modifier.html" style="background: black;border-style: none;margin-top: 5px;">Modifier</a>
+          <a class="btn btn-primary" href="{{ url('/delete') }}/{{ Str::random(10) }}.{{ $rows->idarticle }}.67y89.45h" style="background: black;border-style: none;margin-top: 5px;">Supprimer</a>
         </div>
       </div>
     </div>
@@ -131,7 +136,7 @@
                         <input type="hidden" name="img" id="imageCode">
                     </p>
 
-                  <div><button class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-gray);border-style: none;">ok</button></div>
+                  <div><button class="btn btn-primary d-block w-100" type="submit" style="background: black;border-style: none;">ok</button></div>
               </form>            
 
               <script>
@@ -178,7 +183,8 @@
 </div>
 </div>
    
-      
+           
+
        
         </div>
               <footer class="bg-white sticky-footer">

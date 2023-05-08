@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="E-Art ETU001670 le site de Hasinjaka qui concerne l IA">
-  <title>E-Art - ETU001543</title>
+  <meta name="description" content="HASINJAKA ETU001670 le site de Hasinjaka qui concerne l IA">
+  <title>HASINJAKA - ETU001543</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <style>
+    body {
+      background-color: #f8f9fa; /* Light gray background color */
+    }
+
+    .card {
+      background-color: #ff0000; /* Red card background color */
+      color: #fff; /* White text color */
+      border-radius: 10px;
+    }
+
+    .card h1,
+    .card p {
+      color: #fff; /* White text color */
+    }
+  </style>
 </head>
+
 <body>
   <div class="container my-5">
     <div class="row">
       <div class="col-md-8">
-        <h1>{{ $fiche->titre }}</h1>
-        <p class="text-muted">{{ $fiche->datepublication }}</p>
-        <img src="{{ $fiche->img }}" alt="{{ $fiche->titre }}" class="img-fluid my-4">
-        <p>{{ $fiche->resumer }}</p>
-        <hr>
-        <div>
-          {!! $fiche->contenu !!}
+        <div class="card">
+          <div class="card-body">
+            <h1>{{ $fiche->titre }}</h1>
+            <p class="text-muted">{{ $fiche->datepublication }}</p>
+            <img src="{{ $fiche->img }}" alt="{{ $fiche->titre }}" class="img-fluid my-4">
+            <p>{{ $fiche->resumer }}</p>
+            <hr>
+            <div>
+              {!! $fiche->contenu !!}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -36,4 +59,5 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 </body>
+
 </html>
