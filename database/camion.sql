@@ -4,7 +4,7 @@ mdp varchar(30),
 mail varchar(30)
 );
 
-insert into utilisateurs(mdp,mail) values ('tojo','tojo');
+insert into utilisateurs(mdp,mail) values ('user','user');
 
 create table admin(
 mdp varchar(30),
