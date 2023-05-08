@@ -7,7 +7,7 @@ use App\Users;
 use App\article;
 use App\information;
 use App\faq;
-use Illumintate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Cache;
 
 class UserController extends Controller
 {
