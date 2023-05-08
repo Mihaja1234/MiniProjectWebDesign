@@ -79,7 +79,7 @@ $listeNumeroPage = range(1, $lastPage);
         $fiche = Cache::remember('fiche_'.$id,60,function() use ($id){
             return article::find($id);
         });
-        $response = response() -> view('user/Fiche_art',['fiche'=>$fiche]);
+        $response = response() -> view('user/Fiche_art',['fiche'=>$fiche,]);
       
        $response->header('Cache-Control','max-age=3600,public');
        return $response;
