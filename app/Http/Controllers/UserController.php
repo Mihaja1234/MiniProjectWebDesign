@@ -57,16 +57,12 @@ $listeNumeroPage = range(1, $lastPage);
 //        $id = $tab[count($tab)-2];
 //        $fiche = article::find($id);
 //        $premier = substr($fiche->resumer, 0, 1);
-     
 //        $resume_reste = substr($fiche->resumer, 1, strlen($fiche->resumer)-1);     
-   
 //               return view('user/Fiche_art',[
 //           'fiche' => $fiche,
 //         'premier' => $premier,
 //             'resume_reste' => $resume_reste,
 //         ]);
-
-
 //    }
 
 
@@ -85,7 +81,7 @@ $listeNumeroPage = range(1, $lastPage);
         });
         $response = response() -> view('user/Fiche_art',['fiche'=>$fiche]);
       
-       $response=header('Cache-Control','max-age=3600,public');
+       $response->header('Cache-Control','max-age=3600,public');
        return $response;
 
     }
