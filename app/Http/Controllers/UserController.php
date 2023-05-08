@@ -7,7 +7,8 @@ use App\Users;
 use App\article;
 use App\information;
 use App\faq;
-use Illumintate\Support\Facades\Cache
+use Illumintate\Support\Facades\Cache;
+
 class UserController extends Controller
 {
     public function index(Request $request)
