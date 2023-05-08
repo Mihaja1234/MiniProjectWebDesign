@@ -48,7 +48,7 @@ return [
             'host' =>  'localhost',
             'database' => 'safeone_db',
             'username' =>  'root',
-            'password' =>  'hardi',
+            'password' =>  'hasinjaka',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
 
